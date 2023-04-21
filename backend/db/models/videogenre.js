@@ -15,10 +15,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   VideoGenre.init({
     id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+
     },
     videoId: {
       type: DataTypes.INTEGER,
