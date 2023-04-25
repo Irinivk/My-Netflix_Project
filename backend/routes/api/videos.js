@@ -65,7 +65,7 @@ router.get('/movies', requireAuth, async (req, res) => {
     res.status(200).json({ Videos: allvideos })
 })
 
-//get all tv-shows
+// get all tv-shows
 router.get('/tv-shows', requireAuth, async (req, res) => {
 
     const allvideos = await Video.findAll({
@@ -103,11 +103,13 @@ router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
 
     const { name } = req.body
 
-    const thegenre = Genre.findOne({
+    const thegenre = await Genre.findOne({
         where: {
             name: name
         }
     })
+
+    console.log(thegenre)
 
     if (!thegenre) {
         return res.status(404).json({
@@ -115,7 +117,7 @@ router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
         });
     }
 
-    const newgenreforvideo = VideoGenre.build({
+    const newgenreforvideo = await VideoGenre.build({
         videoId: req.params.videoId,
         genreId: thegenre.id
     })
