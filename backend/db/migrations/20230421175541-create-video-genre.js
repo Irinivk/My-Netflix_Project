@@ -17,12 +17,16 @@ module.exports = {
       videoId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Videos' }
+        references: { 
+          model: 'Videos' 
+        }
       },
       genreId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Genres' }
+        references: { 
+          model: 'Genres' 
+        }
       },
       createdAt: {
         allowNull: false,
