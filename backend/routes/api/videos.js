@@ -3,6 +3,7 @@ const { requireAuth } = require('../../utils/auth');
 const { Video, VideoGenre, Genre } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { route } = require('./accounts');
 
 const router = express.Router();
 
@@ -49,8 +50,6 @@ router.get('/', requireAuth, async (req, res) => {
         include: Genre
     })
 
-    console.log(allvideos)
-
     res.status(200).json({ Videos: allvideos})
 })
 
@@ -85,19 +84,7 @@ router.post('/create',validVideos, requireAuth, async (req, res) => {
 
     const { name, type, cast, url, preview, description, genre } = req.body
 
-    // const newVideo = Video.build({
-    //     userId: req.user.id,
-    //     name,
-    //     type,
-    //     cast,
-    //     url,
-    //     preview,
-    //     description
-    // })
-
-    // await newVideo.save()
-
-    const newVideo = Video.create({
+    const newVideo = Video.build({
         userId: req.user.id,
         name,
         type,
@@ -107,7 +94,7 @@ router.post('/create',validVideos, requireAuth, async (req, res) => {
         description
     })
 
-    // await newVideo.save()
+    await newVideo.save()
 
     res.status(200).json(newVideo)
 })
@@ -123,8 +110,6 @@ router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
         }
     })
 
-    console.log(thegenre)
-
     if (!thegenre) {
         return res.status(404).json({
             "message": "Genre couldn't be found"
@@ -139,6 +124,49 @@ router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
     await newgenreforvideo.save()
 
     res.status(200).json(newgenreforvideo)
+})
+
+// delete a video
+
+router.delete('/:videoId', requireAuth, async (req, res) => {
+
+    const thevideo = await Video.findByPk(req.params.videoId)
+
+    if (!thevideo) {
+        return res.status(404).json({
+            "message": "Video couldn't be found"
+        });
+    }
+
+    if (thevideo.userId !== req.user.id) {
+        return res.status(404).json({
+            "message": "Invalid"
+        });
+    }
+
+    await thevideo.destroy()
+
+    res.status(200).json({
+        "message": "Successfully deleted"
+    })
+
+})
+
+// search by video name
+router.get('/:videoName', requireAuth, async (req, res) => {
+    const allvideo = await Video.findAll({
+        where: {
+            name: req.params.videoName
+        }
+    })
+
+    if (allvideo.length === 0) {
+        return res.status(404).json({
+            "message": "Video couldn't be found"
+        });
+    }
+
+    res.status(200).json({ Video: allvideo })
 })
 
 
