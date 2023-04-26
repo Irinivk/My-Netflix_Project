@@ -46,8 +46,10 @@ const validGenre = [
 router.get('/', requireAuth, async (req, res) => {
 
     const allvideos = await Video.findAll({
-        include: [{ model: Genre}]
+        include: Genre
     })
+
+    console.log(allvideos)
 
     res.status(200).json({ Videos: allvideos})
 })
@@ -59,7 +61,7 @@ router.get('/movies', requireAuth, async (req, res) => {
         where: {
             type: 'Movie'
         },
-        include: [{ model: Genre }]
+        include: Genre
     })
 
     res.status(200).json({ Videos: allvideos })
@@ -72,7 +74,7 @@ router.get('/tv-shows', requireAuth, async (req, res) => {
         where: {
             type: 'TV-Show'
         },
-        include: [{ model: Genre }]
+        include: Genre
     })
 
     res.status(200).json({ Videos: allvideos })
@@ -81,9 +83,21 @@ router.get('/tv-shows', requireAuth, async (req, res) => {
 // create a video
 router.post('/create',validVideos, requireAuth, async (req, res) => {
 
-    const { name, type, cast, url, preview, description } = req.body
+    const { name, type, cast, url, preview, description, genre } = req.body
 
-    const newVideo = Video.build({
+    // const newVideo = Video.build({
+    //     userId: req.user.id,
+    //     name,
+    //     type,
+    //     cast,
+    //     url,
+    //     preview,
+    //     description
+    // })
+
+    // await newVideo.save()
+
+    const newVideo = Video.create({
         userId: req.user.id,
         name,
         type,
@@ -93,7 +107,7 @@ router.post('/create',validVideos, requireAuth, async (req, res) => {
         description
     })
 
-    await newVideo.save()
+    // await newVideo.save()
 
     res.status(200).json(newVideo)
 })
