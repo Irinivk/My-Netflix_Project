@@ -19,14 +19,16 @@ module.exports = {
         allowNull: false,
         references: { 
           model: 'Videos' 
-        }
+        },
+        onDelete: 'CASCADE'
       },
       genreId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { 
           model: 'Genres' 
-        }
+        },
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,

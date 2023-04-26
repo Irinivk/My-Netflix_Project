@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       );
       Video.belongsToMany(
         models.Genre,
-        { through: models.VideoGenre }
+        { through: models.VideoGenre, foreignKey: 'videoId', onDelete: 'CASCADE' }
       )
     }
   }
