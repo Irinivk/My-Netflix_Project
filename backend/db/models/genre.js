@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Genre.belongsToMany(
         models.Video,
-        { through: models.VideoGenre }
+        { through: models.VideoGenre, foreignKey: 'genreId' }
       )
     }
   }
