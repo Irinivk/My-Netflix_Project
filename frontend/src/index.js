@@ -6,28 +6,34 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
-import * as sessionActions from "./store/session";
-
+import { Route, Switch } from "react-router-dom";
+import LoginFormPage from "./components/LoginFormPage";
+import SignupFormPage from "./components/SignupFormPage";
 
 const store = configureStore();
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
 
   window.csrfFetch = csrfFetch;
   window.store = store;
-  window.sessionActions = sessionActions;
 }
-
-// if (process.env.NODE_ENV !== "production") {
-//   window.store = store;
-// }
 
 function Root() {
   return (
     <ReduxProvider store={store}>
-      <BrowserRouter>
-        <App />
+      <BrowserRouter> 
+
+        <Switch>
+          <Route path="/login" component={LoginFormPage} />
+          <Route path="/signup" component={SignupFormPage} />
+
+        <Route exact path="/">
+          <App />
+        </Route>
+
+        </Switch>
+        
       </BrowserRouter>
     </ReduxProvider>
   );
