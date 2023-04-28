@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "./SignupForm.css";
 
 function SignupFormPage() {
@@ -17,18 +17,18 @@ function SignupFormPage() {
     const [errors, setErrors] = useState({});
 
 
-    useEffect(() => {
-        const err = {}
+    // useEffect(() => {
+    //     const err = {}
 
-        if (email.length === 0) err.email = ''
-        if (username.length === 0) err.email = ''
-        if (password.length === 0) err.email = ''
-        if (confirmPassword.length === 0) err.email = ''
-        if (username.length < 4) err.username = ''
-        if (password.length < 6) err.username = ''
+    //     if (email.length === 0) err.email = ''
+    //     if (username.length === 0) err.email = ''
+    //     if (password.length === 0) err.email = ''
+    //     if (confirmPassword.length === 0) err.email = ''
+    //     if (username.length < 4) err.username = ''
+    //     if (password.length < 6) err.username = ''
 
-        setErrors(errors)
-    }, [email, username, password, confirmPassword])
+    //     setErrors(errors)
+    // }, [email, username, password, confirmPassword])
 
     if (sessionUser) return <Redirect to="/" />;
     

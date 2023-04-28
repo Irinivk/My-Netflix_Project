@@ -41,6 +41,8 @@ function ProfileButton({ user }) {
             <ul className={ulClassName} ref={ulRef}>
                 <li>{user.username}</li>
                 <li>{user.email}</li>
+                <li>Upload</li>
+                <li>Manage Profiles</li>
                 <li>
                     <button onClick={logout}>Log Out</button>
                 </li>

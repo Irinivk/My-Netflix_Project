@@ -4,6 +4,9 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Allfilms from "./components/allvideos";
+import AllUsersAcc from "./components/allaccounts";
+import AllTVShows from "./components/alltvshows";
+import AllMovies from "./components/allmovies";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -18,8 +21,13 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {sessionUser && <Switch>
-        <Route path="/" component={Allfilms} />
+        <Route exact path='/browse/shows/tv' component={AllTVShows} />
+        <Route exact path='/browse/movies' component={AllMovies} /> 
+        <Route exact path="/" component={AllUsersAcc} /> 
+        <Route exact path="/browse" component={Allfilms} />
+        
         </Switch>}   
+        
     </>
   );  
 }
