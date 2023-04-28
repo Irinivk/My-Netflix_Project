@@ -1,8 +1,8 @@
-import { fetchVideos } from "../../store/videos"
+import { fetchVideos } from "../../../store/videos"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
-import FetchVideosIndex from "../allvideosindex.js"
+import FetchVideosIndex from "../allvideosindex.js/index.js"
 
 
 const Allfilms = () => {
@@ -17,7 +17,7 @@ const Allfilms = () => {
     return (
         <div>
             {videos.map(video => (
-                <FetchVideosIndex 
+                <FetchVideosIndex
                     video={video}
                     key={video.id}
                 />

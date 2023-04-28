@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import Allfilms from "./components/allvideos";
-import AllUsersAcc from "./components/allaccounts";
-import AllTVShows from "./components/alltvshows";
-import AllMovies from "./components/allmovies";
+import Allfilms from "./components/Films/allvideos";
+import AllUsersAcc from "./components/UserAccounts/allaccounts";
+import AllTVShows from "./components/AllTVShowFilms/alltvshows";
+import AllMovies from "./components/AllMovieFilms/allmovies";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -22,14 +22,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {sessionUser && <Switch>
         <Route exact path='/browse/shows/tv' component={AllTVShows} />
-        <Route exact path='/browse/movies' component={AllMovies} /> 
-        <Route exact path="/" component={AllUsersAcc} /> 
+        <Route exact path='/browse/movies' component={AllMovies} />
+        <Route exact path="/" component={AllUsersAcc} />
         <Route exact path="/browse" component={Allfilms} />
-        
-        </Switch>}   
-        
+
+      </Switch>}
+
     </>
-  );  
+  );
 }
 
 export default App;

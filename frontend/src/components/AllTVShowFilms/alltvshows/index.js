@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { fetchTVShows } from "../../store/videos"
+import { fetchTVShows } from "../../../store/videos"
 import AllTVShowsIndex from "../alltvshowsindex"
 
 

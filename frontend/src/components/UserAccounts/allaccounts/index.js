@@ -1,4 +1,4 @@
-import { fetchAcc } from "../../store/accounts"
+import { fetchAcc } from "../../../store/accounts"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import AllUserAccIndex from "../allaccindex"
