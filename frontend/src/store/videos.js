@@ -4,6 +4,7 @@ import { csrfFetch } from "./csrf"
 export const LOAD_VIDEOS = 'videos/LOAD_VIDEOS'
 export const LOAD_MOVIES = 'videos/LOAD_MOVIES'
 export const LOAD_TVSHOWS = 'videos/LOAD_TVSHOWS'
+export const LOAD_ONEVIDEO = 'video/LOAD_ONEVIDEO'
 
 export const loadVideos = (videos) => ({
     type: LOAD_VIDEOS,
@@ -18,6 +19,11 @@ export const loadMovies = (videos) => ({
 export const loadTVShow = (videos) => ({
     type: LOAD_TVSHOWS,
     videos
+})
+
+export const loadAVideo = (video) => ({
+    type: LOAD_ONEVIDEO,
+    video
 })
 
 export const fetchVideos = () => async (dispatch) => {
@@ -47,9 +53,39 @@ export const fetchTVShows = () => async (dispatch) => {
     }
 }
 
-export const createVideo = () => async (dispatch) => {
+export const createVideo = (video) => async (dispatch) => {
+    const res = csrfFetch('/api/videos/create', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(video)
+    })
 
-    
+    if (res.ok) {
+        const data = await res.json();
+        return data;
+    }
+}
+
+export const createGenre = (videoId, videoObj) => async (dispatch) => {
+    const res = csrfFetch(`/api//videos/genre/${videoId}`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(videoObj)
+    })
+
+    if (res.ok) {
+        const data = await res.json();
+        return data;
+    }
+}
+
+export const diplayVideo = (videoId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/videos/details/${videoId}`)
+
+    if (res.ok) {
+        const videoDetails = await res.json()
+        dispatch(loadAVideo(videoDetails))
+    }
 }
  
 
@@ -80,6 +116,9 @@ const VideoReducer = (state = {}, action) => {
                 newtvshowsstate[vid.id] = vid
             });
             return newtvshowsstate
+        case LOAD_ONEVIDEO:
+            const newOnestate = {}
+            console.log(state)
         default:
             return state
     }

@@ -1,4 +1,5 @@
 import './action.css'
+import { NavLink } from "react-router-dom";
 
 
 const AllActionMovies = ({mov}) => {
@@ -11,7 +12,10 @@ const AllActionMovies = ({mov}) => {
     // console.log(mov)
 
     return (
-        <img src={mov.preview} alt="" className='poster' />
+        <NavLink to={`/video/${mov.id}`} className="link">
+            <img src={mov.preview} alt="" className='poster' />
+        </NavLink>
+        
     )
 }
 

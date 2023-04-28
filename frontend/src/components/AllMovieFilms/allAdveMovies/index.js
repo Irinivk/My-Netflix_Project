@@ -1,11 +1,15 @@
 import './adv.css'
+import { NavLink } from "react-router-dom";
 
 
 const AllAdvMovies = ({adv}) => {
 
 
     return (
-        <img src={adv.preview} alt="" className='poster' />
+        <NavLink to={`/video/${adv.id}`} className="link">
+            <img src={adv.preview} alt="" className='poster' />
+        </NavLink>
+        
     )
 
 }

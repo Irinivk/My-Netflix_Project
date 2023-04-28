@@ -7,6 +7,8 @@ import Allfilms from "./components/Films/allvideos";
 import AllUsersAcc from "./components/UserAccounts/allaccounts";
 import AllTVShows from "./components/AllTVShowFilms/alltvshows";
 import AllMovies from "./components/AllMovieFilms/allmovies";
+import NewGenre from "./components/CreateNewGenre";
+import LoadOneVideo from "./components/OneFilm";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -22,10 +24,12 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {sessionUser && <Switch>
         <Route exact path='/browse/shows/tv' component={AllTVShows} />
-        <Route exact path='/browse/movies' component={AllMovies} />
+        <Route exact path='/browse/movies' component={AllMovies} />  
+        <Route exact path="/video/:videoId" component={LoadOneVideo} />
+        <Route exact path="/videos/new" component={NewGenre} />
         <Route exact path="/" component={AllUsersAcc} />
         <Route exact path="/browse" component={Allfilms} />
-
+       
       </Switch>}
 
     </>

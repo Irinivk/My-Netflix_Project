@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import { NavLink } from 'react-router-dom';
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function ProfileButton({ user }) {
             <ul className={ulClassName} ref={ulRef}>
                 <li>{user.username}</li>
                 <li>{user.email}</li>
-                <li>Upload</li>
+                <NavLink exact to="/videos/new">Upload</NavLink>
                 <li>Manage Profiles</li>
                 <li>
                     <button onClick={logout}>Log Out</button>

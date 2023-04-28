@@ -1,11 +1,15 @@
 import './comedy.css'
+import { NavLink } from "react-router-dom";
 
 
 const AllComedyMovies = ({ com }) => {
 
 
     return (
-        <img src={com.preview} alt="" className='poster' />
+        <NavLink to={`/video/${com.id}`} className="link">
+            <img src={com.preview} alt="" className='poster' />
+        </NavLink>
+        
     )
 
 }

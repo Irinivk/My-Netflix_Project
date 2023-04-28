@@ -1,4 +1,5 @@
 import './mystery.css'
+import { NavLink } from "react-router-dom";
 
 
 
@@ -6,7 +7,9 @@ const AllMysteryMovies = ({ mys }) => {
 
 
     return (
-        <img src={mys.preview} alt="" className='poster'/>
+        <NavLink to={`/video/${mys.id}`} className="link">
+             <img src={mys.preview} alt="" className='poster'/>
+        </NavLink>
     )
 
 }
