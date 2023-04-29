@@ -23,6 +23,7 @@ function Navigation({ isLoaded }) {
                     <NavLink exact to="/browse">Home</NavLink>
                     <NavLink exact to="/browse/movies">Movies</NavLink>
                     <NavLink exact to="/browse/shows/tv">TV-Shows</NavLink>
+                    <NavLink exact to="/browse/user/films">My-List</NavLink>
                 </li>
                 <ProfileButton user={sessionUser} />
             </ul>

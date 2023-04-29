@@ -231,6 +231,21 @@ router.get('/details/:videoId', requireAuth, async (req, res) => {
     
 })
 
+// all users videos
+router.get('/film/current/user', requireAuth, async (req, res) => {
+
+    console.log(req.user.id)
+    const userVideos = await Video.findAll({
+        where: {
+            userId: req.user.id
+        },
+        include: Genre
+    })
+
+
+    res.status(200).json({Videos: userVideos})
+})
+
 
 
 module.exports = router;
