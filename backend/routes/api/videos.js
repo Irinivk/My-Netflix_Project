@@ -4,6 +4,7 @@ const { Video, VideoGenre, Genre } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { route } = require('./accounts');
+const { Op } = require('sequelize');
 
 const router = express.Router();
 
@@ -100,7 +101,7 @@ router.post('/create',validVideos, requireAuth, async (req, res) => {
 })
 
 // create a genre for the video
-router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
+router.post('/genre/:videoId',validGenre, requireAuth, async (req, res) => {
 
     const { name } = req.body
 
@@ -116,14 +117,14 @@ router.post('/genre/:videoId', validGenre, requireAuth, async (req, res) => {
         });
     }
 
-    const newgenreforvideo = await VideoGenre.build({
+        const newgenreforvideo = await VideoGenre.build({
         videoId: req.params.videoId,
         genreId: thegenre.id
     })
 
     await newgenreforvideo.save()
 
-    res.status(200).json(newgenreforvideo)
+  res.status(200).json(newgenreforvideo)
 })
 
 // delete a video
@@ -168,6 +169,27 @@ router.get('/:videoName', requireAuth, async (req, res) => {
 
     res.status(200).json({ Video: allvideo })
 })
+
+// get details of a video
+router.get('/details/:videoId', requireAuth, async (req, res) => {
+
+
+    const thevideo = await Video.findOne({
+        where: {
+            id: req.params.videoId
+        }
+    })
+
+    if (!thevideo) {
+        return res.status(404).json({
+            "message": "Video couldn't be found"
+        });
+    }
+
+    res.status(200).json(thevideo)
+    
+})
+
 
 
 module.exports = router;
