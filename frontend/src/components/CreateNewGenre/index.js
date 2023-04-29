@@ -163,7 +163,7 @@ const sessionUser = useSelector(state => state.session.user);
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
-                <p className="errors">{errors.description}</p>
+                <p className="errors">{errors.length}</p>
             </div >
             <div className="thebutt">
                 <button

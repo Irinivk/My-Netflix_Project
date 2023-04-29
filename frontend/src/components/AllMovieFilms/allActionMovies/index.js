@@ -9,7 +9,7 @@ const AllActionMovies = ({mov}) => {
     //     console.log(gen)
     // }
 
-    // console.log(mov)
+    // console.log(mov.id)
 
     return (
         <NavLink to={`/video/${mov.id}`} className="link">

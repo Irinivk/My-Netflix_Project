@@ -79,9 +79,10 @@ export const createGenre = (videoId, videoObj) => async (dispatch) => {
     }
 }
 
-export const diplayVideo = (videoId) => async (dispatch) => {
+export const displayVideo = (videoId) => async (dispatch) => {
     const res = await csrfFetch(`/api/videos/details/${videoId}`)
 
+    console.log(res)
     if (res.ok) {
         const videoDetails = await res.json()
         dispatch(loadAVideo(videoDetails))
@@ -100,7 +101,16 @@ const VideoReducer = (state = {}, action) => {
                 newstate[vid.id] = vid
             });
             // console.log(newstate)
-            return newstate
+            return newstate 
+        case LOAD_ONEVIDEO:
+            console.log(action)
+            const newOnestate = {}
+            
+            newOnestate[action.video.id] = action.video
+            
+            return newOnestate
+            // console.log(newOnestate)
+            // return newOnestate
         case LOAD_MOVIES:
             const newmoviestate = {}
             // console.log(action)
@@ -116,9 +126,7 @@ const VideoReducer = (state = {}, action) => {
                 newtvshowsstate[vid.id] = vid
             });
             return newtvshowsstate
-        case LOAD_ONEVIDEO:
-            const newOnestate = {}
-            console.log(state)
+       
         default:
             return state
     }

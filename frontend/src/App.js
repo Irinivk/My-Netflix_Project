@@ -22,13 +22,13 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {sessionUser && <Switch>
-        <Route exact path='/browse/shows/tv' component={AllTVShows} />
-        <Route exact path='/browse/movies' component={AllMovies} />  
-        <Route exact path="/video/:videoId" component={LoadOneVideo} />
-        <Route exact path="/videos/new" component={NewGenre} />
+      {sessionUser && <Switch> 
         <Route exact path="/" component={AllUsersAcc} />
         <Route exact path="/browse" component={Allfilms} />
+        <Route path='/browse/movies' component={AllMovies} />  
+        <Route path='/browse/shows/tv' component={AllTVShows} />
+        <Route exact path="/video/:videoId" component={LoadOneVideo} />
+        <Route path="/videos/new" component={NewGenre} />
        
       </Switch>}
 

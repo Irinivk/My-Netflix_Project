@@ -20,7 +20,7 @@ const AllMovies = () => {
         dispatch(fetchMovies())
     }, [dispatch])
 
-
+    
     let genreArrayAction = [];
     let genreArrayAdventure = [];
     let genreArrayComedy = [];
@@ -29,6 +29,7 @@ const AllMovies = () => {
     let genreArrayHorror = [];
     for (let i = 0; i < movies.length; i++) {
         // console.log(movies[i])
+        if (!movies[i].Genres) return null
         for (let j = 0; j < movies[i].Genres.length; j++) {
             // console.log(movies[i].Genres[j].name)
             if (movies[i].Genres[j].name === 'Action') {
@@ -53,6 +54,7 @@ const AllMovies = () => {
         } 
     }
 
+    
     // console.log(genreArrayHorror)
     // console.log(movies)
     return (
