@@ -1,9 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from "./session";
+import AccountReducer from "./accounts";
+import VideoReducer from "./videos";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
+  accounts: AccountReducer,
+  video: VideoReducer
 });
 
 let enhancer;

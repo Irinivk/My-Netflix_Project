@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import Allfilms from "./components/allvideos";
+import Allfilms from "./components/Films/allvideos";
+import AllUsersAcc from "./components/UserAccounts/allaccounts";
+import AllTVShows from "./components/AllTVShowFilms/alltvshows";
+import AllMovies from "./components/AllMovieFilms/allmovies";
+import NewGenre from "./components/CreateNewGenre";
+import LoadOneVideo from "./components/OneFilm";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -17,11 +22,18 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {sessionUser && <Switch>
-        <Route path="/" component={Allfilms} />
-        </Switch>}   
+      {sessionUser && <Switch> 
+        <Route exact path="/" component={AllUsersAcc} />
+        <Route exact path="/browse" component={Allfilms} />
+        <Route path='/browse/movies' component={AllMovies} />  
+        <Route path='/browse/shows/tv' component={AllTVShows} />
+        <Route exact path="/video/:videoId" component={LoadOneVideo} />
+        <Route path="/videos/new" component={NewGenre} />
+       
+      </Switch>}
+
     </>
-  );  
+  );
 }
 
 export default App;

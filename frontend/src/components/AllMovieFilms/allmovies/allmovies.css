@@ -1,0 +1,23 @@
+.advboxes {
+    display: flex;
+}
+
+.actionbox {
+    display: flex;
+}
+
+.comedyboxes {
+    display: flex;
+}
+
+.crimeboxes {
+    display: flex;
+}
+
+.mysteryboxes {
+    display: flex;
+}
+
+.horrorboxes {
+    display: flex;
+}

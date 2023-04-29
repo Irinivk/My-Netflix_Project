@@ -28,7 +28,7 @@ function Root() {
           <Route path="/login" component={LoginFormPage} />
           <Route path="/signup" component={SignupFormPage} />
 
-        <Route exact path="/">
+        <Route >
           <App />
         </Route>
 
