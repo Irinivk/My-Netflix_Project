@@ -81,11 +81,11 @@ router.get('/tv-shows', requireAuth, async (req, res) => {
 })
 
 // create a video
-router.post('/create',validVideos, requireAuth, async (req, res) => {
+router.post('/create', validVideos, requireAuth, async (req, res) => {
 
     const { name, type, cast, url, preview, description, genre } = req.body
 
-    const newVideo = Video.build({
+    const newVideo = await Video.build({
         userId: req.user.id,
         name,
         type,
@@ -97,11 +97,24 @@ router.post('/create',validVideos, requireAuth, async (req, res) => {
 
     await newVideo.save()
 
+    const newgen = await Genre.create({
+        name: genre
+    })
+
+    const newgenreforvideo = await VideoGenre.build({
+        videoId: newVideo.id,
+        genreId: newgen.id
+    })
+
+    console.log(newgenreforvideo)
+    await newgenreforvideo.save()
+
+
     res.status(200).json(newVideo)
 })
 
 // create a genre for the video
-router.post('/genre/:videoId',validGenre, requireAuth, async (req, res) => {
+router.post('/genre/:videoId',requireAuth, async (req, res) => {
 
     const { name } = req.body
 
@@ -111,6 +124,7 @@ router.post('/genre/:videoId',validGenre, requireAuth, async (req, res) => {
         }
     })
 
+    console.log(thegenre)
     if (!thegenre) {
         return res.status(404).json({
             "message": "Genre couldn't be found"
@@ -122,9 +136,36 @@ router.post('/genre/:videoId',validGenre, requireAuth, async (req, res) => {
         genreId: thegenre.id
     })
 
+    console.log(newgenreforvideo)
     await newgenreforvideo.save()
 
   res.status(200).json(newgenreforvideo)
+
+    // const { name } = req.body
+
+// const thevideo = await Video.findByPk(req.params.videoId)
+
+//     if (!thevideo) {
+//         return res.status(404).json({
+//             "message": "Spot couldn't be found"
+//         });
+//     }
+
+
+//     const newgenre = await Genre.build({
+//         name: name
+//     })
+
+//     console.log(newgenre)
+//     const newgenreforvideo = await VideoGenre.build({
+//         videoId: thevideo.id,
+//         genreId: newgenre.id
+//     })
+
+//     console.log(newgenreforvideo)
+//     await newgenreforvideo.save()
+
+//   res.status(200).json(newgenreforvideo)
 })
 
 // delete a video
@@ -188,6 +229,21 @@ router.get('/details/:videoId', requireAuth, async (req, res) => {
 
     res.status(200).json(thevideo)
     
+})
+
+// all users videos
+router.get('/film/current/user', requireAuth, async (req, res) => {
+
+    console.log(req.user.id)
+    const userVideos = await Video.findAll({
+        where: {
+            userId: req.user.id
+        },
+        include: Genre
+    })
+
+
+    res.status(200).json({Videos: userVideos})
 })
 
 

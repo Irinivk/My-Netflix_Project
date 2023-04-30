@@ -9,6 +9,7 @@ import { restoreCSRF, csrfFetch } from './store/csrf';
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
+import { ModalProvider, Modal } from "./store/context/Modal";
 
 const store = configureStore();
 
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 function Root() {
   return (
+    <ModalProvider>
     <ReduxProvider store={store}>
       <BrowserRouter> 
 
@@ -30,12 +32,14 @@ function Root() {
 
         <Route >
           <App />
+          <Modal />
         </Route>
 
         </Switch>
         
       </BrowserRouter>
     </ReduxProvider>
+    </ModalProvider>
   );
 }
 

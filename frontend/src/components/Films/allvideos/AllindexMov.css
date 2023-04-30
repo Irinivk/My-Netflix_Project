@@ -1,27 +1,27 @@
-.advboxes {
+.Alladvboxes {
     display: flex;
 }
 
-.actionbox {
+.Allactionbox {
     display: flex;
 }
 
-.comedyboxes {
+.Allcomedyboxes {
     display: flex;
 }
 
-.crimeboxes {
+.Allcrimeboxes {
     display: flex;
 }
 
-.mysteryboxes {
+.Allmysteryboxes {
     display: flex;
 }
 
-.horrorboxes {
+.Allhorrorboxes {
     display: flex;
 }
 
-.dramaboxes {
+.AllDramaboxes {
     display: flex;
 }

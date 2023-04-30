@@ -15,7 +15,7 @@ const LoadOneVideo = () => {
     const dispatch = useDispatch()
 
 
-    const user = useSelector(state => state.session.user);
+    // const user = useSelector(state => state.session.user);
     const video = useSelector((state) =>
         state.video ? state.video[videoId] : null
     );
