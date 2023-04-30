@@ -7,28 +7,52 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('VideoGenres', {
+    await queryInterface.createTable('Episodes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      videoId: {
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { 
-          model: 'Videos' 
+        references: {
+          model: 'Users'
         },
         onDelete: 'CASCADE'
       },
-      genreId: {
+      videoId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { 
-          model: 'Genres' 
+        references: {
+          model: 'Videos'
         },
         onDelete: 'CASCADE'
+      },
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      number: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      season: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      url: {
+        type: Sequelize.STRING(2000),
+        allowNull: false
+      },
+      preview: {
+        type: Sequelize.STRING(2000),
+        allowNull: false
+      },
+      description: {
+        type: Sequelize.STRING(2000),
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -43,7 +67,7 @@ module.exports = {
     }, options);
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = 'VideoGenres'
+    options.tableName = 'Episodes'
     await queryInterface.dropTable(options);
   }
 };
