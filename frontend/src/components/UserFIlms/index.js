@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { displayUserVideos } from "../../store/videos";
 import { NavLink } from "react-router-dom";
 import UserFilmsIndex from "./userVideos";
+import './userfilm.css'
 
 
 
@@ -18,8 +19,11 @@ const UserFilms = () => {
 
     console.log(videos)
     return (
-        <div>
-            <h1>Manage Your Films</h1>
+        <div className="alluserfilms">
+            <div className="manageuserfilm">
+                <h1>Manage Your Films</h1>
+            </div>
+            
             { videos.length === 0 &&
                 <NavLink to={'/videos/new'} className='create-a-new-spot' >Create a New Film</NavLink>
             }

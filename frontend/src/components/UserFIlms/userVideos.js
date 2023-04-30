@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import OpenModalMenuItem from '../Navigation/OpenModulMenyItem';
 import DeleteUserVideo from '../DeleteUserFilm';
+import './detailuserfilm.css'
 
 
 const UserFilmsIndex = ({ vid }) => {
@@ -9,8 +10,8 @@ const UserFilmsIndex = ({ vid }) => {
     console.log(vid)
 
     return (
-        <div>
-            <div>
+        <div className='alldetailuservideo'>
+            <div className='imagesuser'>
                 <NavLink to={`/video/${vid.id}`}>
                     <img src={vid.preview} alt=''></img>
                 </NavLink>
