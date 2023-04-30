@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         models.Video,
         { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true }
       );
+
+      User.hasMany(
+        models.Episode,
+        { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true }
+      );
     }
   };
 
