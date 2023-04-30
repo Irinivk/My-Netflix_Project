@@ -1,27 +1,27 @@
-.advboxes {
+.advtv {
     display: flex;
 }
 
-.actionbox {
+.actiontv {
     display: flex;
 }
 
-.comedyboxes {
+.comedytv {
     display: flex;
 }
 
-.crimeboxes {
+.crimetv {
     display: flex;
 }
 
-.mysteryboxes {
+.mysterytv {
     display: flex;
 }
 
-.horrorboxes {
+.horrortv {
     display: flex;
 }
 
-.dramaboxes {
+.Dramatv {
     display: flex;
 }

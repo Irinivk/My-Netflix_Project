@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { createVideo } from "../../store/videos";
-import { createGenre } from "../../store/videos";
+// import { createGenre } from "../../store/videos";
 import Dropdown from "./dropdown";
 import './newGenre.css'
 
@@ -24,7 +24,8 @@ const NewGenre = () => {
         {value: 'Comedy', label:'Comedy'},
         {value: 'Crime', label:'Crime'},
         {value: 'Mystery', label:'Mystery'},
-        {value: 'Horror', label:'Horror'}
+        {value: 'Horror', label:'Horror'},
+        { value: 'Drama', label: 'Drama' }
     ]
 const sessionUser = useSelector(state => state.session.user);
 
@@ -39,27 +40,33 @@ const sessionUser = useSelector(state => state.session.user);
 
     const dispatch = useDispatch()
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        const err = {}
+    useEffect(() => {
+const errors = {}
 
         
 
-        if (!name.length) err.name = 'Name for your Film is required'
-        if (!type.length) err.type = 'Type of film is required'
-        if (!cast.length) err.cast = 'Cast is required'
-        if (!url.length) err.url = 'Url for your film is required'
-        if (!preview.length) err.preview = 'Preview Image required'
-        if (!description.length) err.length = 'Description is required'
-        if (description.length < 30) err.length = 'Description needs a minimum of 30 characters'
-        if (!genreName.length) err.genreName = 'Genre is required'
+        if (!name.length) errors.name = 'Name for your Film is required'
+        if (!type.length) errors.type = 'Type of film is required'
+        if (!cast.length) errors.cast = 'Cast is required'
+        if (!url.length) errors.url = 'Url for your film is required'
+        if (!preview.length) errors.preview = 'Preview Image required'
+        if (!description.length) errors.length = 'Description is required'
+        if (description.length < 30) errors.length = 'Description needs a minimum of 30 characters'
+        if (!genreName.length) errors.genreName = 'Genre is required'
 
         const imageRegex = /\.(gif|jpe?g|png|bmp|svg)$/i;
         if (preview.length > 0 && !imageRegex.test(preview)) {
-            err.preview = "Image URL must end in .png, .jpg, or .jpeg";
+            errors.preview = "Image URL must end in .png, .jpg, or .jpeg";
         }
 
+        setErrors(errors);
+    }, [name, type, cast, url, preview, description, genreName])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        
         const video = {
             userId: sessionUser.id,
             name,
@@ -67,17 +74,13 @@ const sessionUser = useSelector(state => state.session.user);
             cast,
             url,
             preview,
-            description
+            description,
+            genre: genreName
         }
 
-        if(!!Object.values(err).length) {
-            setErrors(err);
-        } else {
-            const newVideo = await dispatch(createVideo(video));
-                dispatch(createGenre(newVideo.id, genreName));
-                history.push(`/video/${newVideo.id}`);
-            }
-            
+              let newVideo = await dispatch(createVideo(video))
+
+              history.push(`/video/${newVideo.id}`)
         }
     
 
@@ -116,7 +119,10 @@ const sessionUser = useSelector(state => state.session.user);
                     id="cast"
                     placeholder="Cast"
                     value={cast}
-                    onChange={(e) => setCast(e.target.value)}
+                    onChange={(e) =>
+                        // console.log(e)
+                        setCast(e.target.value)
+                    }
                 />
             </div>
             <p className="errors">{errors.cast}</p>
@@ -150,8 +156,19 @@ const sessionUser = useSelector(state => state.session.user);
                     isSearchable
                     placeHolder="Genres..."
                     options={options2}
-                    onChange={(value) => setGenreName(value.value)}
+                    onChange={(value) => {
+                        setGenreName(value.value)
+                     }
+                        
+                    }
                 />
+                {/* <input
+                    type="text"
+                    id="prevImage"
+                    placeholder="genre"
+                    value={genreName}
+                    onChange={(e) => setGenreName(e.target.value)}
+                /> */}
                 <p className="errors">{errors.genreName}</p>
             </div >
             <div className="descriptionboxes">
@@ -166,8 +183,10 @@ const sessionUser = useSelector(state => state.session.user);
                 <p className="errors">{errors.length}</p>
             </div >
             <div className="thebutt">
+                
                 <button
                     type="submit"
+                    disabled={Boolean(Object.values(errors).length)}
                 >
                     Create Film
                 </button>

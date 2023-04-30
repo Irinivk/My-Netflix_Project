@@ -5,6 +5,8 @@ export const LOAD_VIDEOS = 'videos/LOAD_VIDEOS'
 export const LOAD_MOVIES = 'videos/LOAD_MOVIES'
 export const LOAD_TVSHOWS = 'videos/LOAD_TVSHOWS'
 export const LOAD_ONEVIDEO = 'video/LOAD_ONEVIDEO'
+export const RECEIVE_VIDEOS = 'video/RECEIVE_VIDEOS'
+export const REMOVE_VIDEO = 'video/REMOVE_VIDEO'
 
 export const loadVideos = (videos) => ({
     type: LOAD_VIDEOS,
@@ -23,6 +25,16 @@ export const loadTVShow = (videos) => ({
 
 export const loadAVideo = (video) => ({
     type: LOAD_ONEVIDEO,
+    video
+})
+
+export const receiveVideo = (videos) => ({
+    type: RECEIVE_VIDEOS,
+    videos
+})
+
+export const removeVideo = (video) => ({
+    type: REMOVE_VIDEO,
     video
 })
 
@@ -54,29 +66,21 @@ export const fetchTVShows = () => async (dispatch) => {
 }
 
 export const createVideo = (video) => async (dispatch) => {
-    const res = csrfFetch('/api/videos/create', {
+        const res = await csrfFetch('/api/videos/create', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(video)
     })
 
-    if (res.ok) {
-        const data = await res.json();
-        return data;
-    }
-}
+    console.log(video)
+        if (res.ok) {
+            const thevideo = await res.json();
+            console.log(thevideo)
+            // dispatch(receiveVideo(thevideo))
+            console.log(thevideo)
+            return thevideo;
+        }
 
-export const createGenre = (videoId, videoObj) => async (dispatch) => {
-    const res = csrfFetch(`/api//videos/genre/${videoId}`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(videoObj)
-    })
-
-    if (res.ok) {
-        const data = await res.json();
-        return data;
-    }
 }
 
 export const displayVideo = (videoId) => async (dispatch) => {
@@ -89,6 +93,23 @@ export const displayVideo = (videoId) => async (dispatch) => {
     }
 }
  
+export const displayUserVideos = () => async (dispatch) => {
+    const res = await csrfFetch('/api/videos/film/current/user')
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(receiveVideo(data))
+    }
+}
+
+export const deleteVideo = (video) => async (dispatch) => {
+    const res = await csrfFetch(`/api/videos/${video.id}`, {
+        method: 'DELETE'
+    })
+
+    dispatch(removeVideo(video.id))
+
+}
 
 const VideoReducer = (state = {}, action) => {
 
@@ -102,6 +123,14 @@ const VideoReducer = (state = {}, action) => {
             });
             // console.log(newstate)
             return newstate 
+        case RECEIVE_VIDEOS:
+            const userMovies = {}
+            // console.log(action)
+            action.videos.Videos.forEach(vid => {
+                userMovies[vid.id] = vid
+            });
+            // console.log(userMovies)
+            return userMovies
         case LOAD_ONEVIDEO:
             console.log(action)
             const newOnestate = {}
@@ -125,8 +154,12 @@ const VideoReducer = (state = {}, action) => {
             action.videos.Videos.forEach(vid => {
                 newtvshowsstate[vid.id] = vid
             });
+            // console.log(newtvshowsstate)
             return newtvshowsstate
-       
+        case REMOVE_VIDEO:
+            const oldstate = {...state}
+            delete oldstate[action.video]
+            return oldstate
         default:
             return state
     }

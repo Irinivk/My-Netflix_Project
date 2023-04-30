@@ -8,6 +8,7 @@ import AllComedyMovies from "../allcomedyMovies"
 import AllCrimeMovies from "../allcrimeMovies"
 import AllMysteryMovies from "../allMysteryMovies"
 import AllHorrorMovies from "../allHorrorMovies"
+import AlldramaMovies from "../allDramaMovies"
 import './allmovies.css'
 
 
@@ -27,6 +28,7 @@ const AllMovies = () => {
     let genreArrayCrime = [];
     let genreArrayMystery = [];
     let genreArrayHorror = [];
+    let genreArrayDrama = [];
     for (let i = 0; i < movies.length; i++) {
         // console.log(movies[i])
         if (!movies[i].Genres) return null
@@ -50,6 +52,9 @@ const AllMovies = () => {
             }
             if (movies[i].Genres[j].name.includes('Horror')) {
                 genreArrayHorror.push(movies[i])
+            }
+            if (movies[i].Genres[j].name.includes('Drama')) {
+                genreArrayDrama.push(movies[i])
             }
         } 
     }
@@ -118,6 +123,16 @@ const AllMovies = () => {
                     key={hor.id}
                 />
             ))}
+            </div>
+            <h1>Drama</h1>
+            <div className="dramaboxes">
+                {genreArrayDrama.map(dra => (
+                    <AlldramaMovies
+                        className='imga'
+                        dra={dra}
+                        key={dra.id}
+                    />
+                ))}
             </div>
            
         </div>
