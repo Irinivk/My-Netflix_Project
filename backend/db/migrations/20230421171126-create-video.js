@@ -23,11 +23,11 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       name: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         allowNull: false
       },
       type: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         allowNull: false
       },
       cast: {
@@ -35,14 +35,18 @@ module.exports = {
         allowNull: false
       },
       url: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(2000),
         allowNull: false
       },
       preview: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(2000),
         allowNull: false
       },
       description: {
+        type: Sequelize.STRING(2000),
+        allowNull: false
+      },
+      genre: {
         type: Sequelize.STRING,
         allowNull: false
       },

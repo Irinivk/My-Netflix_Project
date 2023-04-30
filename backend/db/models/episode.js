@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Video extends Model {
+  class Episode extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,31 +11,43 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Video.belongsTo(
+      Episode.belongsTo(
         models.User,
         { foreignKey: 'userId' }
       );
-      Video.hasMany(
-        models.Episode,
-        { foreignKey: 'videoId', onDelete: 'CASCADE', hooks: true }
+
+      Episode.belongsTo(
+        models.Video,
+        { foreignKey: 'videoId' }
       );
+
     }
   }
-  Video.init({
+  Episode.init({
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    videoId: {
+      type: DataTypes.INTEGER,
+      allowNull: false, 
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    number: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    cast: {
-      type: DataTypes.STRING,
+    season: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     url: {
@@ -50,13 +62,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(2000),
       allowNull: false
     },
-    genre: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
   }, {
     sequelize,
-    modelName: 'Video',
+    modelName: 'Episode',
   });
-  return Video;
+  return Episode;
 };
