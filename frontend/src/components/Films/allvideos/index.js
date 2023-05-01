@@ -21,7 +21,7 @@ const Allfilms = () => {
     useEffect(() => {
         dispatch(fetchVideos())
     })
-    //  console.log(videos)
+    //  console.log(videos.genre)
 
 
     let genreArrayAction = [];
@@ -32,36 +32,36 @@ const Allfilms = () => {
     let genreArrayHorror = [];
     let genreArrayDrama = [];
     for (let i = 0; i < videos.length; i++) {
-        // console.log(movies[i])
-        if (!videos[i].Genres) return null
-        for (let j = 0; j < videos[i].Genres.length; j++) {
+        // console.log(videos[i].genre)
+        if (!videos[i].genre) return null
+        // for (let j = 0; j < videos[i].Genres.length; j++) {
             // console.log(movies[i].Genres[j].name)
-            if (videos[i].Genres[j].name === 'Action') {
+            if (videos[i].genre === 'Action') {
                 genreArrayAction.push(videos[i])
 
             }
-            if (videos[i].Genres[j].name === 'Adventure') {
+            if (videos[i].genre === 'Adventure') {
                 genreArrayAdventure.push(videos[i])
             }
-            if (videos[i].Genres[j].name === 'Comedy') {
+            if (videos[i].genre === 'Comedy') {
                 genreArrayComedy.push(videos[i])
             }
-            if (videos[i].Genres[j].name.includes('Crime')) {
+            if (videos[i].genre.includes('Crime')) {
                 genreArrayCrime.push(videos[i])
             }
-            if (videos[i].Genres[j].name.includes('Mystery')) {
+            if (videos[i].genre.includes('Mystery')) {
                 genreArrayMystery.push(videos[i])
             }
-            if (videos[i].Genres[j].name.includes('Horror')) {
+            if (videos[i].genre.includes('Horror')) {
                 genreArrayHorror.push(videos[i])
             }
-            if (videos[i].Genres[j].name.includes('Drama')) {
+            if (videos[i].genre.includes('Drama')) {
                 genreArrayDrama.push(videos[i])
             }
-        }
+        // }
     }
 
-    console.log(genreArrayComedy)
+    // console.log(genreArrayComedy)
     return (
         <div>
             <h1>Action</h1>
