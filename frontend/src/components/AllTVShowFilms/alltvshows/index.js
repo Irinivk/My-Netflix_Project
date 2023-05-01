@@ -32,33 +32,33 @@ const AllTVShows = () => {
     let genreArrayHorror = [];
     let genreArrayDrama = [];
     for (let i = 0; i < tvshows.length; i++) {
-        // console.log(movies[i])
-        if (!tvshows[i].Genres) return null
-        for (let j = 0; j < tvshows[i].Genres.length; j++) {
+        console.log(tvshows[i].genre)
+        if (!tvshows[i].genre) return null
+        // for (let j = 0; j < tvshows[i].Genres.length; j++) {
             // console.log(movies[i].Genres[j].name)
-            if (tvshows[i].Genres[j].name === 'Action') {
+            if (tvshows[i].genre === 'Action') {
                 genreArrayAction.push(tvshows[i])
 
             }
-            if (tvshows[i].Genres[j].name === 'Adventure') {
+            if (tvshows[i].genre === 'Adventure') {
                 genreArrayAdventure.push(tvshows[i])
             }
-            if (tvshows[i].Genres[j].name === 'Comedy') {
+            if (tvshows[i].genre === 'Comedy') {
                 genreArrayComedy.push(tvshows[i])
             }
-            if (tvshows[i].Genres[j].name.includes('Crime')) {
+            if (tvshows[i].genre.includes('Crime')) {
                 genreArrayCrime.push(tvshows[i])
             }
-            if (tvshows[i].Genres[j].name.includes('Mystery')) {
+            if (tvshows[i].genre.includes('Mystery')) {
                 genreArrayMystery.push(tvshows[i])
             }
-            if (tvshows[i].Genres[j].name.includes('Horror')) {
+            if (tvshows[i].genre.includes('Horror')) {
                 genreArrayHorror.push(tvshows[i])
             }
-            if (tvshows[i].Genres[j].name.includes('Drama')) {
+            if (tvshows[i].genre.includes('Drama')) {
                 genreArrayDrama.push(tvshows[i])
             }
-        }
+        // }
     }
 
     return (
