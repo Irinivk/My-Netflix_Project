@@ -30,33 +30,33 @@ const AllMovies = () => {
     let genreArrayHorror = [];
     let genreArrayDrama = [];
     for (let i = 0; i < movies.length; i++) {
-        // console.log(movies[i])
-        if (!movies[i].Genres) return null
-        for (let j = 0; j < movies[i].Genres.length; j++) {
+        // console.log(movies[i].genre)
+        if (!movies[i].genre) return null
+        // for (let j = 0; j < movies[i].Genres.length; j++) {
             // console.log(movies[i].Genres[j].name)
-            if (movies[i].Genres[j].name === 'Action') {
+            if (movies[i].genre === 'Action') {
                 genreArrayAction.push(movies[i])
                
             }
-            if (movies[i].Genres[j].name === 'Adventure') {
+            if (movies[i].genre === 'Adventure') {
                 genreArrayAdventure.push(movies[i])
             }
-            if (movies[i].Genres[j].name === 'Comedy') {
+            if (movies[i].genre === 'Comedy') {
                 genreArrayComedy.push(movies[i])
             }
-            if (movies[i].Genres[j].name.includes('Crime')) {
+            if (movies[i].genre.includes('Crime')) {
                 genreArrayCrime.push(movies[i])
             }
-            if (movies[i].Genres[j].name.includes('Mystery')) {
+            if (movies[i].genre.includes('Mystery')) {
                 genreArrayMystery.push(movies[i])
             }
-            if (movies[i].Genres[j].name.includes('Horror')) {
+            if (movies[i].genre.includes('Horror')) {
                 genreArrayHorror.push(movies[i])
             }
-            if (movies[i].Genres[j].name.includes('Drama')) {
+            if (movies[i].genre.includes('Drama')) {
                 genreArrayDrama.push(movies[i])
             }
-        } 
+        // } 
     }
 
     
