@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Irinivk/My-Netflix_Project/issues"
   },
-  "homepage": "https://github.com/Irinivk/My-Netflix_Project#readme"
+  "homepage": "https://github.com/Irinivk/My-Netflix_Project#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0"
+  }
 }

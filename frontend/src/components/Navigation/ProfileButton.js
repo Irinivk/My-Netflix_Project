@@ -2,10 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { NavLink } from 'react-router-dom';
+import './Profilebutton.css'
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
+    
+
     const ulRef = useRef();
 
     const openMenu = () => {
@@ -35,20 +38,26 @@ function ProfileButton({ user }) {
     const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
     return (
-        <>
-            <button onClick={openMenu}>
+        <div className = "userButton">
+            <button className="dropbtn">
                 <i className="fas fa-user-circle" />
             </button>
-            <ul className={ulClassName} ref={ulRef}>
+            <div className="dropdown-content" ref={ulRef}>
+                <div className="userInfo">
+                    <ul className={ulClassName} ref={ulRef}>
                 <li>{user.username}</li>
                 <li>{user.email}</li>
                 <NavLink exact to="/videos/new">Upload</NavLink>
-                <li>Manage Profiles</li>
+                <NavLink exact to="/">Manage Profiles</NavLink>
                 <li>
                     <button onClick={logout}>Log Out</button>
                 </li>
             </ul>
-        </>
+                </div>
+                
+            </div>
+            
+        </div>
     );
 }
 
