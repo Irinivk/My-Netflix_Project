@@ -62,7 +62,7 @@ const AllTVShows = () => {
     }
 
     return (
-        <div>
+        <div className="tvshowtitles">
             {/* {tvshows.map(tv => (
                 <AllTVShowsIndex
                     tv={tv}

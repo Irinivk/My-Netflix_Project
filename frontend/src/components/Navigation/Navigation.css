@@ -1,0 +1,19 @@
+.hometopscreen {
+    /* margin: 0 4% 0.5em; */
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.browselinks > a{
+    margin-left: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}

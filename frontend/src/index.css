@@ -1,1 +1,12 @@
 /* TODO Add site wide styles */
+
+#root {
+    background: #141414;
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    background: #141414;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    color: #fff;
+}

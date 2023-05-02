@@ -2,9 +2,13 @@ import { fetchAcc } from "../../../store/accounts"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import AllUserAccIndex from "../allaccindex"
+// import { useState } from "react";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 const AllUsersAcc = () => {
     const dispatch = useDispatch()
+
 
     const acc = useSelector(state => Object.values(state.accounts))
 
@@ -13,7 +17,6 @@ const AllUsersAcc = () => {
     }, [dispatch])
 
 
-    // console.log(acc)
     return (
         <div>
             {acc.map(accounts => (
@@ -22,6 +25,7 @@ const AllUsersAcc = () => {
                     key={accounts.id}
                 />
             ))}
+            {/* <FontAwesomeIcon icon={faUserPlus} size="xl" style={{ color: "#212121", }} /> */}
         </div>
     )
 }

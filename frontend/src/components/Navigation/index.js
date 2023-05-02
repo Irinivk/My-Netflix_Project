@@ -18,15 +18,18 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ul>
-                <li>
+            <div className='hometopscreen'>
+                <div className='browselinks'>
                     <NavLink exact to="/browse">Home</NavLink>
                     <NavLink exact to="/browse/movies">Movies</NavLink>
                     <NavLink exact to="/browse/shows/tv">TV-Shows</NavLink>
                     <NavLink exact to="/browse/user/films">My-List</NavLink>
-                </li>
-                <ProfileButton user={sessionUser} />
-            </ul>
+                </div>
+                <div className='userbutton'>
+                    <ProfileButton user={sessionUser} />
+                </div>
+                
+            </div>
         );
     } else {
         sessionLinks = (

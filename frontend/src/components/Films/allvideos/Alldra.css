@@ -4,3 +4,8 @@
     max-height: 100px;
     display: flex;
 }
+
+a.all {
+    width: 200px;
+    height: 300px;
+}
