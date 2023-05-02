@@ -63,7 +63,7 @@ const Allfilms = () => {
 
     // console.log(genreArrayComedy)
     return (
-        <div>
+        <div className="allfilmstitles">
             <h1>Action</h1>
             <div className="Allactionbox">
                 {genreArrayAction.map(mov => (

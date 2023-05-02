@@ -5,7 +5,10 @@ const AllDrama = ({ dra }) => {
 
     return (
         <NavLink to={`/video/${dra.id}`} className="All">
-            <img src={dra.preview} alt="" className='Allposter' />
+            <div className="Allfilmimages">
+                <img src={dra.preview} alt="" className='Allposter' />
+            </div>
+            
         </NavLink>
     )
 

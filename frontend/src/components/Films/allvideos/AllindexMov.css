@@ -25,3 +25,11 @@
 .AllDramaboxes {
     display: flex;
 }
+
+.allfilmstitles {
+    color: #e5e5e5;
+    display: inline-block;
+    margin: 0 4% 0.5em;
+    min-width: 6em;
+    text-decoration: none;
+}
