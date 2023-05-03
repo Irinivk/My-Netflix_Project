@@ -1,0 +1,49 @@
+.AccForm {
+    margin-top: 150px;
+    display: grid;
+    justify-content: center;
+}
+
+.AccForm > h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.name1 > label {
+    width: 500px;
+    margin-top: 20px;
+    display: grid;
+}
+
+.prev1 > label {
+    margin-top: 20px;
+    display: grid;
+}
+
+#NameAcc {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 30px;
+}
+
+::placeholder {
+    color: white;
+}
+
+.errors {
+    color: red;
+}
+
+#ImageAcc {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.candhbfhb {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}

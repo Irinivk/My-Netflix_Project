@@ -2,9 +2,8 @@ import { fetchAcc } from "../../../store/accounts"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import AllUserAccIndex from "../allaccindex"
-// import { useState } from "react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom';
+import './allaccounts.css'
 
 const AllUsersAcc = () => {
     const dispatch = useDispatch()
@@ -16,17 +15,33 @@ const AllUsersAcc = () => {
         dispatch(fetchAcc())
     }, [dispatch])
 
+    console.log(acc)
 
     return (
-        <div>
+        <div className="ecerty">
+            <div className="allaccounts"> 
+            {/* <div className="accimages"> */}
             {acc.map(accounts => (
                 <AllUserAccIndex 
                     accounts={accounts}
                     key={accounts.id}
                 />
-            ))}
-            {/* <FontAwesomeIcon icon={faUserPlus} size="xl" style={{ color: "#212121", }} /> */}
+            ))} 
+            <div>
+                
+            </div>
+                <NavLink to='/create/account'>
+                    <img src='https://cdn.onlinewebfonts.com/svg/img_520036.png' alt="" className="sjnd"/>
+                </NavLink>
+            {/* </div> */}
+            
+            
         </div>
+        <div className="allaccbutton">
+                <button>Manage Profiles</button>
+            </div>
+        </div>
+        
     )
 }
 
