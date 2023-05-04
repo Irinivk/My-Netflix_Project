@@ -34,6 +34,8 @@
 }
 
 .dropdown-content>.userInfo {
+    margin-top: 5px;
+    list-style: none;
     /* color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -44,15 +46,21 @@
 }
 
 .dropdown-content>.userInfo {
+    /* margin-top: 5px; */
     /* margin-right: 100px; */
     left: -130px;
 }
 
 .dropdown-content>.userInfo:hover {
+    /* margin-top: 5px; */
+    list-style: none;
+    text-decoration: none;
     background-color: black;
 }
 
 .userButton:hover .dropdown-content {
+    /* margin-top: 5px; */
+    list-style: none;
     display: block;
 }
 
@@ -60,3 +68,21 @@
     background-color: white;
 }
 
+.profile-dropdown > a {
+    font-size: larger;
+    display: flex;
+    margin-top: 10px;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.profile-dropdown > li {
+    font-size: larger;
+    margin-top: 10px;
+    list-style: none;
+}
+
+/* .profile-dropdown {
+    margin-top: 10px;
+} */

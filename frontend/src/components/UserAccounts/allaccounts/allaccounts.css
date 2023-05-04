@@ -1,0 +1,36 @@
+.accimages {
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    width: 200px;
+}
+
+.allaccounts > a > img {
+    width: 200px;
+}
+
+.allaccounts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top: 200px;
+}
+
+.allaccbutton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+img.sjnd {
+    margin-left: 20px;
+}
+
+.allaccbutton > button {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 1.2vw;
+    margin: 2em 0 1em;
+    padding: 0.5em 1.5em;
+}

@@ -10,6 +10,7 @@ import AllMovies from "./components/AllMovieFilms/allmovies";
 import NewGenre from "./components/CreateNewGenre";
 import LoadOneVideo from "./components/OneFilm";
 import UserFilms from "./components/UserFIlms";
+import CreateNewAcc from "./components/UserAccounts/createAccount";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -31,7 +32,8 @@ function App() {
         <Route path='/browse/shows/tv' component={AllTVShows} />
         <Route exact path="/video/:videoId" component={LoadOneVideo} />
         <Route path="/videos/new" component={NewGenre} />
-       
+        <Route exact path='/create/account' component={CreateNewAcc} />
+
       </Switch>}
 
     </>

@@ -1,17 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import './allaccindex.css'
 
 
 const AllUserAccIndex = ({ accounts }) => {
 
 
     return (
-        <div>
+        <div className='allaccimages'>
             <NavLink to={'/browse'} >
                 <img 
                 src={accounts.prevImage} alt=""/>
                 <h1 > {accounts.first_name} </h1>
-            </NavLink>      
+            </NavLink>   
         </div>
     )
 }

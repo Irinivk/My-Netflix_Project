@@ -5,7 +5,7 @@ const Allaction = ({ mov }) => {
 
     return (
         <NavLink to={`/video/${mov.id}`} className="All">
-            <img src={mov.preview} alt="" className='Allposter' />
+            <img src={mov.preview} alt="" className='Alldaposter' />
         </NavLink>
     )
 
