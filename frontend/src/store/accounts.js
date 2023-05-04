@@ -17,6 +17,21 @@ export const fetchAcc = () => async (dispatch) => {
     }
 }
 
+export const createAccount = (account) => async (dispatch) => {
+    const res = await csrfFetch('/api/accounts', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(account)
+    })
+
+    if (res.ok) {
+        const theacc = await res.json();
+        console.log(theacc)
+        return theacc;
+    }
+
+}
+
 
 const AccountReducer = (state = {}, action) => {
     switch(action.type) {

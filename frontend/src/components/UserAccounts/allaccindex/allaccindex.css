@@ -1,0 +1,16 @@
+.allaccimages > a > img {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+}
+
+.allaccimages > a > h1 {
+    margin-left: 60px;
+    color: azure;
+    
+}
+
+.allaccimages>a {
+    text-decoration: none;
+}

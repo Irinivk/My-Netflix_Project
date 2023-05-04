@@ -7,13 +7,14 @@
     z-index: 1;
     padding: 10px;
     font-size: 14px;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
 }
 
 .browselinks > a{
     margin-left: 20px;
     margin-right: 5px;
     font-size: 14px;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
 }

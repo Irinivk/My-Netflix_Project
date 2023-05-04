@@ -2,5 +2,10 @@
     object-fit: contain;
     width: 100%;
     max-height: 100px;
-    display: flex;
+    margin-right: 10px;
+    transition: transform 450ms;
+}
+
+.tvposter:hover {
+    transform: scale(1.08);
 }
