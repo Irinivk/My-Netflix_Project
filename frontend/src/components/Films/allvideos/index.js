@@ -63,8 +63,15 @@ const Allfilms = () => {
 
     // console.log(genreArrayComedy)
     return (
+        <div className="wrapper" >
+            <div className="backgrounddjnjf">
+                <img src="https://media.architecturaldigest.com/photos/6176ccf122e49584c796e2e2/16:9/w_2560%2Cc_limit/rev-1-DU-05633-Edit_rv2_High_Res_JPEG.jpeg    " alt="" />
+                <h2 class="bottom-right">Dune</h2>
+            </div>
+            
         <div className="allfilmstitles">
             <h1>Action</h1>
+                {/* <h2>Bottom Right</h2> */}
             <div className="Allactionbox">
                 {genreArrayAction.map(mov => (
                     <Allaction
@@ -134,6 +141,7 @@ const Allfilms = () => {
                     />
                 ))}
             </div>
+        </div>
         </div>
     )
 }

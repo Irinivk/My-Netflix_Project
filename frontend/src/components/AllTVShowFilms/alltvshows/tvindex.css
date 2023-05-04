@@ -4,6 +4,9 @@
 
 .actiontv {
     display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
 }
 
 .comedytv {
@@ -26,10 +29,10 @@
     display: flex;
 }
 
-.tvshowtitles {
+/* .tvshowtitles {
     color: #e5e5e5;
     display: inline-block;
     margin: 0 4% 0.5em;
     min-width: 6em;
     text-decoration: none;
-}
+} */

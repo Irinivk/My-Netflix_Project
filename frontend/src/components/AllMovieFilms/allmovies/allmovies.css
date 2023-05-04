@@ -4,6 +4,7 @@
 
 .actionbox {
     display: flex;
+    /* width: 50px; */
 }
 
 .comedyboxes {
@@ -19,6 +20,8 @@
 }
 
 .horrorboxes {
+    /* height: 1000px;
+    width: 500px; */
     display: flex;
 }
 
@@ -28,8 +31,11 @@
 
 .Movie_Posters {
         color: #e5e5e5;
+        /* height: 1000px; */
+        width: 100%;
         display: inline-block;
         margin: 0 4% 0.5em;
-        min-width: 6em;
+        /* min-width: 6em; */
         text-decoration: none;
 }
+
