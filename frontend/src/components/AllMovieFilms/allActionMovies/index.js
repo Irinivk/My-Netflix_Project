@@ -12,8 +12,8 @@ const AllActionMovies = ({mov}) => {
     // console.log(mov.id)
 
     return (
-        <NavLink to={`/video/${mov.id}`} className="link">
-            <img src={mov.preview} alt="" className='poster' />
+        <NavLink to={`/videos/${mov.id}/details`} className="link">
+            <img src={mov.preview} alt="" className='adasposter' />
         </NavLink>
         
     )

@@ -7,8 +7,8 @@ const AllCrimeMovies = ({ cri }) => {
 
 
     return (
-        <NavLink to={`/video/${cri.id}`} className="link">
-            <img src={cri.preview} alt="" className='poster' />
+        <NavLink to={`/videos/${cri.id}/details`} className="link">
+            <img src={cri.preview} alt="" className='asdjkbdposter' />
         </NavLink>
         
     )

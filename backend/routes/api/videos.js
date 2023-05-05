@@ -212,5 +212,24 @@ router.post('/episode/create/:videoId', requireAuth, async (req, res) => {
 
 })
 
+// get details of an episode
+router.get('/episode/details/:episodeId', requireAuth, async (req, res) => {
+   
+    const theepi= await Episode.findOne({
+        where: {
+            id: req.params.episodeId
+        }
+    })
+
+    if (!theepi) {
+        return res.status(404).json({
+            "message": "Video couldn't be found"
+        });
+    }
+
+    res.status(200).json(theepi)
+
+})
+
 
 module.exports = router;

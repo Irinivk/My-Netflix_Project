@@ -1,6 +1,11 @@
-.poster {
-    object-fit: contain;
-    width: 100%;
-    max-height: 100px;
-    display: flex;
+.sadadposter {
+    margin-right: 10px;
+    transition: transform 450ms;
+    width: 272px;
+    height: 155px;
+    z-index: 1;
+}
+
+.sadadposter:hover {
+    transform: scale(1.08);
 }

@@ -6,8 +6,8 @@ const AllAdvMovies = ({adv}) => {
 
 
     return (
-        <NavLink to={`/video/${adv.id}`} className="link">
-            <img src={adv.preview} alt="" className='poster' />
+        <NavLink to={`/videos/${adv.id}/details`} className="link">
+            <img src={adv.preview} alt="" className='asdaposter' />
         </NavLink>
         
     )

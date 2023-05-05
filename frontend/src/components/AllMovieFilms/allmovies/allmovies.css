@@ -1,41 +1,97 @@
 .advboxes {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.advboxes::-webkit-scrollbar {
+    display: none;
 }
 
 .actionbox {
     display: flex;
-    /* width: 50px; */
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.actionbox::-webkit-scrollbar {
+    display: none;
 }
 
 .comedyboxes {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.actionbox::-webkit-scrollbar {
+    display: none;
 }
 
 .crimeboxes {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.crimeboxes::-webkit-scrollbar {
+    display: none;
 }
 
 .mysteryboxes {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.mysteryboxes::-webkit-scrollbar {
+    display: none;
 }
 
 .horrorboxes {
-    /* height: 1000px;
-    width: 500px; */
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.horrorboxes::-webkit-scrollbar {
+    display: none;
 }
 
 .dramaboxes {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.dramaboxes::-webkit-scrollbar {
+    display: none;
 }
 
 .Movie_Posters {
-        color: #e5e5e5;
-        /* height: 1000px; */
-        width: 100%;
-        display: inline-block;
-        margin: 0 4% 0.5em;
-        /* min-width: 6em; */
-        text-decoration: none;
+    color: #e5e5e5;
+    /* height: 1000px; */
+    width: 100%;
+    display: inline-block;
+    margin: 0 4% 0.5em;
+    /* min-width: 6em; */
+    text-decoration: none;
+    z-index: 1;
+    margin-top: 800px;
+    margin-left: 60px;
 }
 
