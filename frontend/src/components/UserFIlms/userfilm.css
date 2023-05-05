@@ -19,3 +19,10 @@
     justify-content: center;
     margin-top: 60px;
 }
+
+.create-a-new-film-button {
+    color: white;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 60px;
+}

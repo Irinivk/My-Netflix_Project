@@ -33,9 +33,10 @@ function Navigation({ isLoaded }) {
         );
     } else {
         sessionLinks = (
-            <div className='hugekbkhba'>  
+            <div className='hugekbkhba'> 
                 <div className='smandsnad'>
-                     
+                    {/* <div class=" default-ltr-cache-1dibr51" data-uia="nmhp-card-hero+gradient"></div> */}
+                
                         <NavLink exact to="/">Home</NavLink>
                    
                     <div className='ajsndas'>
@@ -63,6 +64,7 @@ function Navigation({ isLoaded }) {
 
     return (
         <ul>
+            {/* <img src='https://assets.nflxext.com/ffe/siteui/vlv3/efb4855d-e702-43e5-9997-bba0154152e0/41237afb-6f3a-48e2-8b0d-fd3171752a38/US-en-20230417-popsignuptwoweeks-perspective_alpha_website_small.jpg' alt='' /> */}
             {isLoaded && sessionLinks}
         </ul>
     );

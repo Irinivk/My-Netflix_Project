@@ -85,15 +85,15 @@ const errors = {}
     
 
     return (
-        <form onSubmit={handleSubmit} className='createspot'>
+        <form onSubmit={handleSubmit} className='AccForm'>
             <h1>Create New Film</h1>
             <h2>What is the name of the film?</h2>
-            <div>
+            <div className="name1">
                 <label>
                     Name
                     <input
                         type="text"
-                        id="Name of film"
+                        id="NameAcc"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -116,7 +116,7 @@ const errors = {}
                  <h4>Who is featured in this film?</h4>
                 <input
                     type="text"
-                    id="cast"
+                    id="castbox"
                     placeholder="Cast"
                     value={cast}
                     onChange={(e) =>
@@ -130,7 +130,7 @@ const errors = {}
                 <h5>Submit your films url</h5>
                 <input
                     type="text"
-                    id="url"
+                    id="urlboxmbdaw"
                     placeholder="URL"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
@@ -142,7 +142,7 @@ const errors = {}
                 <p>Submit a link to one photo to publish your film.</p>
                 <input
                     type="text"
-                    id="prevImage"
+                    id="previewboxkajnd"
                     placeholder="Preview Image URL"
                     value={preview}
                     onChange={(e) => setPreview(e.target.value)}
@@ -175,7 +175,7 @@ const errors = {}
                 <h6>Describe your film to your viewers!</h6>
                 <input
                     type="text"
-                    id="description"
+                    id="descriptionadad"
                     placeholder="Description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
