@@ -4,8 +4,8 @@ import './dramatvshow.css'
 const Dramatvshow = ({ dra }) => {
 
     return (
-        <NavLink to={`/video/${dra.id}`} className="tv">
-            <img src={dra.preview} alt="" className='tvposter' />
+        <NavLink to={`/videos/${dra.id}/details`} className="tv">
+            <img src={dra.preview} alt="" className='danmatvposter' />
         </NavLink>
     )
 

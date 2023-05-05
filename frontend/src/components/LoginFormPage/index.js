@@ -25,8 +25,19 @@ function LoginFormPage() {
         );
     };
 
+    const DemoUser = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({ credential: "demo@user.io", password: "password" }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) {
+                    setErrors(data.errors);
+                }
+            });
+    };
+
     return (
-        <>
+        <div className="loginbaldhbd">
             <h1>Log In</h1>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -49,8 +60,11 @@ function LoginFormPage() {
                 </label>
                 {errors.credential && <p>{errors.credential}</p>}
                 <button type="submit">Log In</button>
+                <button className="demo-user" onClick={(e) => DemoUser(e)}>
+                    Demo User
+                </button>
             </form>
-        </>
+        </div>
     );
 }
 
