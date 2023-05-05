@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { deleteVideo } from "../../store/videos";
 import { useModal } from "../../store/context/Modal"
+import './deleteuserfilm.css'
 
 
 const DeleteUserVideo = ({ vid }) => {
@@ -21,7 +22,7 @@ const DeleteUserVideo = ({ vid }) => {
     };
 
     return (
-            <div>
+            <div className="kjbcsd">
                 <h1>Confrm Delete</h1>
                 <h2>Are you sure you want to remove this film?</h2>
                 <form onSubmit={handleDelete} className='delete-a-video-form'>

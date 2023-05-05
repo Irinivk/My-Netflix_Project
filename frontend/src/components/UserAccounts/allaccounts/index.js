@@ -38,7 +38,7 @@ const AllUsersAcc = () => {
             
         </div>
         <div className="allaccbutton">
-                <button>Manage Profiles</button>
+                <button onClick={() => alert('Feature managing your accounts coming soon')}>Manage Profiles</button>
             </div>
         </div>
         

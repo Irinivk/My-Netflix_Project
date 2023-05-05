@@ -4,8 +4,8 @@ import './acttvshow.css'
 const ActionTvShow = ({ mov }) => {
 
     return (
-        <NavLink to={`/video/${mov.id}`} className="tv">
-            <img src={mov.preview} alt="" className='tvposter' />
+        <NavLink to={`/videos/${mov.id}/details`} className="tv">
+            <img src={mov.preview} alt="" className='kjnadtvposter' />
         </NavLink>
     )
 

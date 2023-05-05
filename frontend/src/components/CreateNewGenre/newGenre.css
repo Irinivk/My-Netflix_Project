@@ -1,0 +1,42 @@
+#castbox {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 30px;
+    width: 495px;
+}
+
+#urlboxmbdaw {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 30px;
+    width: 495px;
+}
+
+#previewboxkajnd {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 30px;
+    width: 495px;
+}
+
+#descriptionadad {
+    color: aliceblue;
+    background: gray;
+    margin-top: 10px;
+    height: 60px;
+    width: 495px;
+}
+
+.thebutt > button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.thebutt {
+    display: flex;
+    justify-content: center;
+}

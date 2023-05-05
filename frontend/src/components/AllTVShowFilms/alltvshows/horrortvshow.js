@@ -4,8 +4,8 @@ import './horrortvshow.css'
 const Horrortvshow = ({ hor }) => {
 
     return (
-        <NavLink to={`/video/${hor.id}`} className="tv">
-            <img src={hor.preview} alt="" className='tvposter' />
+        <NavLink to={`/videos/${hor.id}/details`} className="tv">
+            <img src={hor.preview} alt="" className='dllamdbhfdtvposter' />
         </NavLink>
     )
 
