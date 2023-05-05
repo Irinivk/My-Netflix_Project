@@ -1,14 +1,10 @@
 .Alldaposter {
-    /* object-fit: contain; */
     margin-right: 10px;
     transition: transform 450ms;
     width: 272px;
     height: 155px;
     z-index: 1;
-    /* margin-right: 10px; */
-    /* width: 100%;
-    max-height: 100px; */
-    /* display: flex; */
+   
 }
 
 .Alldaposter:hover {

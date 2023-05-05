@@ -1,15 +1,16 @@
-import { useDispatch } from "react-redux"
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
-import { fetchMovies } from "../../../store/videos"
-import AllActionMovies from "../allActionMovies"
-import AllAdvMovies from "../allAdveMovies"
-import AllComedyMovies from "../allcomedyMovies"
-import AllCrimeMovies from "../allcrimeMovies"
-import AllMysteryMovies from "../allMysteryMovies"
-import AllHorrorMovies from "../allHorrorMovies"
-import AlldramaMovies from "../allDramaMovies"
-import './allmovies.css'
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { fetchMovies } from "../../../store/videos";
+import AllActionMovies from "../allActionMovies";
+import AllAdvMovies from "../allAdveMovies";
+import AllComedyMovies from "../allcomedyMovies";
+import AllCrimeMovies from "../allcrimeMovies";
+import AllMysteryMovies from "../allMysteryMovies";
+import AllHorrorMovies from "../allHorrorMovies";
+import AlldramaMovies from "../allDramaMovies";
+import { NavLink } from "react-router-dom";
+import './allmovies.css';
 
 
 const AllMovies = () => {
@@ -63,6 +64,15 @@ const AllMovies = () => {
     // console.log(genreArrayHorror)
     // console.log(movies)
     return (
+        <div className="wrapper" >
+            <div className="backgrounddjnjf">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" alt="" />
+                <h2 class="bottom-right">Dune</h2>
+                <p>Elephant Bolbo does not know why he is having the same dream every night. Until he finds something extraordinary!</p>
+                <NavLink to={`/videos/${2}/details`} className="wfefq" >
+                    <button>Details</button>
+                </NavLink>
+            </div>
         <div className="Movie_Posters">
             <h1>Action</h1>
             <div className="actionbox">
@@ -135,6 +145,7 @@ const AllMovies = () => {
                 ))}
             </div>
            
+        </div>
         </div>
     )
 

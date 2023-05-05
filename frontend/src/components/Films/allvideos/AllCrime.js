@@ -4,8 +4,8 @@ import './AllCri.css'
 const AllCrime = ({ cri }) => {
 
     return (
-        <NavLink to={`/video/${cri.id}`} className="All">
-            <img src={cri.preview} alt="" className='Allposter' />
+        <NavLink to={`/videos/${cri.id}/details`} className="All">
+            <img src={cri.preview} alt="" className='Alladsasposter' />
         </NavLink>
     )
 

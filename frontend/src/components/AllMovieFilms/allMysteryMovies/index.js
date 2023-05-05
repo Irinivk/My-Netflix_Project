@@ -7,8 +7,8 @@ const AllMysteryMovies = ({ mys }) => {
 
 
     return (
-        <NavLink to={`/video/${mys.id}`} className="link">
-             <img src={mys.preview} alt="" className='poster'/>
+        <NavLink to={`/videos/${mys.id}/details`} className="link">
+             <img src={mys.preview} alt="" className='mabamnnposter'/>
         </NavLink>
     )
 

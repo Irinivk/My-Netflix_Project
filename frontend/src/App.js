@@ -10,7 +10,9 @@ import AllMovies from "./components/AllMovieFilms/allmovies";
 import NewGenre from "./components/CreateNewGenre";
 import LoadOneVideo from "./components/OneFilm";
 import UserFilms from "./components/UserFIlms";
-import CreateNewAcc from "./components/UserAccounts/createAccount";
+import CreateNewAcc from "./components/UserAccounts/hdbhd";
+import Thefilmdetails from "./components/OneFilm/detailsoffilm";
+import Episodedetails from "./components/OneFilm/detailsofepisodes";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -24,15 +26,18 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {sessionUser && <Switch> 
+      {sessionUser && <Switch>  
+        
         <Route exact path="/" component={AllUsersAcc} />
         <Route exact path="/browse" component={Allfilms} /> 
         <Route path='/browse/user/films' component={UserFilms} />
         <Route path='/browse/movies' component={AllMovies} />  
         <Route path='/browse/shows/tv' component={AllTVShows} />
+        <Route exact path='/videos/:videoId/details' component={Thefilmdetails} />
         <Route exact path="/video/:videoId" component={LoadOneVideo} />
         <Route path="/videos/new" component={NewGenre} />
-        <Route exact path='/create/account' component={CreateNewAcc} />
+        <Route exact path='/create/account' component={CreateNewAcc} /> 
+       <Route exact path='/episodes/:episodeId' component={Episodedetails} />
 
       </Switch>}
 
