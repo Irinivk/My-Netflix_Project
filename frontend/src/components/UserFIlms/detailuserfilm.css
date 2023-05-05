@@ -3,6 +3,31 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
+    margin-left: 20px;
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.user-buttons > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 70px;
+    height: 35px;
+    color: white;
+    
+}
+
+.manageuserfilm > h1 {
+    margin-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

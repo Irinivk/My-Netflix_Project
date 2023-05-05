@@ -4,8 +4,8 @@ import './mysterytvshow.css'
 const Mysterytvshow = ({ mys }) => {
 
     return (
-        <NavLink to={`/video/${mys.id}`} className="tv">
-            <img src={mys.preview} alt="" className='tvposter' />
+        <NavLink to={`/videos/${mys.id}/details`} className="tv">
+            <img src={mys.preview} alt="" className='afkdlnstvposter' />
         </NavLink>
     )
 

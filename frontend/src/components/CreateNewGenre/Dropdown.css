@@ -37,7 +37,7 @@
 
 .dropdown-item.selected {
     background-color: #0d6efd;
-    color: #fff;
+    color: black;
 }
 
 .dropdown-tags {
@@ -70,4 +70,8 @@
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.dropdown-item.false {
+    color: black;
 }

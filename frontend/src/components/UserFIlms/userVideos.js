@@ -18,7 +18,7 @@ const UserFilmsIndex = ({ vid }) => {
             </div>
             <div className='user-buttons'>
                 {/* <NavLink to={`/spots/${spot.id}/edit`} className='user-update'> */}
-                    <button type="button">Update</button>
+                <button type="button" onClick={() => alert('Feature coming soon')}>Update</button>
                 {/* </NavLink> */}
 
                 <OpenModalMenuItem

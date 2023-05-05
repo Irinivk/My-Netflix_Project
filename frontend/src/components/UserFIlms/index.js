@@ -25,7 +25,7 @@ const UserFilms = () => {
             </div>
             
             { videos.length === 0 &&
-                <NavLink to={'/videos/new'} className='create-a-new-spot' >Create a New Film</NavLink>
+                <NavLink to={'/videos/new'} className='create-a-new-film-button' >Create a New Film</NavLink>
             }
             <div className="userVideoCards">
                 {videos.map(vid => (

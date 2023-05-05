@@ -33,33 +33,38 @@ function Navigation({ isLoaded }) {
         );
     } else {
         sessionLinks = (
-            <>  
-                <li>
-                    <NavLink exact to="/">Home</NavLink>
-                </li>
-                <div>
-                     <button>
-                        <NavLink to="/login">Log In</NavLink>
-                    </button>
+            <div className='hugekbkhba'> 
+                <div className='smandsnad'>
+                    {/* <div class=" default-ltr-cache-1dibr51" data-uia="nmhp-card-hero+gradient"></div> */}
+                
+                        <NavLink exact to="/">Home</NavLink>
+                   
+                    <div className='ajsndas'>
+                        <button>
+                             <NavLink to="/login">Log In</NavLink>
+                        </button>
+                    </div>
                 </div>
-
-                <div>
-                    <h1>Create and Upload your own Film Today!</h1>
-                    <h2>Watch Films created by your peers!</h2>
-
-                <button>
-                    <NavLink to="/signup">Sign Up</NavLink>
-                </button>
+                <div className='amsndsLANDJds'>
+                        <h1>Create and Upload your own Film Today!</h1>
+                        <h2>Watch Films created by your peers!</h2>
+                    <div className='andhqvfkbf'>
+                         <button>
+                          <NavLink to="/signup">Sign Up</NavLink>
+                     </button>
+                    </div>
+                    
 
                 </div>
                 
-            </>
+            </div>
             
         );
     }
 
     return (
         <ul>
+            {/* <img src='https://assets.nflxext.com/ffe/siteui/vlv3/efb4855d-e702-43e5-9997-bba0154152e0/41237afb-6f3a-48e2-8b0d-fd3171752a38/US-en-20230417-popsignuptwoweeks-perspective_alpha_website_small.jpg' alt='' /> */}
             {isLoaded && sessionLinks}
         </ul>
     );

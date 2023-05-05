@@ -1,38 +1,89 @@
 .advtv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.advtv::-webkit-scrollbar {
+    display: none;
 }
 
 .actiontv {
     display: flex;
+    max-width: 100%;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding: 20px;
+    z-index: 1;
+}
+
+.actiontv::-webkit-scrollbar {
+    display: none;
 }
 
 .comedytv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.comedytv::-webkit-scrollbar {
+    display: none;
 }
 
 .crimetv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.crimetv::-webkit-scrollbar {
+    display: none;
 }
 
 .mysterytv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.mysterytv::-webkit-scrollbar {
+    display: none;
 }
 
 .horrortv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
+}
+
+.horrortv::-webkit-scrollbar {
+    display: none;
 }
 
 .Dramatv {
     display: flex;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    z-index: 1;
 }
 
-/* .tvshowtitles {
-    color: #e5e5e5;
-    display: inline-block;
-    margin: 0 4% 0.5em;
-    min-width: 6em;
-    text-decoration: none;
-} */
+.Dramatv::-webkit-scrollbar {
+    display: none;
+}
+
+.tvshowtitles {
+    z-index: 1;
+    margin-top: 800px;
+    margin-left: 60px;
+}

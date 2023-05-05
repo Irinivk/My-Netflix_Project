@@ -1,16 +1,17 @@
-import { useDispatch } from "react-redux"
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
-import { fetchTVShows } from "../../../store/videos"
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { fetchTVShows } from "../../../store/videos";
 // import AllTVShowsIndex from "../alltvshowsindex"
-import ActionTvShow from "./acttvshow"
-import Adventuretvshows from "./advtvshows"
-import Comedytvshow from "./comedytvshow"
-import Crimetvshow from "./crimetvshow"
-import Mysterytvshow from "./mysterytvshow"
-import Horrortvshow from "./horrortvshow"
-import Dramatvshow from "./dramatvshow"
-import './tvindex.css'
+import ActionTvShow from "./acttvshow";
+import Adventuretvshows from "./advtvshows";
+import Comedytvshow from "./comedytvshow";
+import Crimetvshow from "./crimetvshow";
+import Mysterytvshow from "./mysterytvshow";
+import Horrortvshow from "./horrortvshow";
+import Dramatvshow from "./dramatvshow";
+import { NavLink } from "react-router-dom";
+import './tvindex.css';
 
 
 const AllTVShows = () => {
@@ -59,9 +60,21 @@ const AllTVShows = () => {
                 genreArrayDrama.push(tvshows[i])
             }
         // }
+
+        console.log(tvshows)
     }
 
     return (
+        <div className="wrapper" >
+            <div className="backgrounddjnjf">
+                <img src="https://tvseriesfinale.com/wp-content/uploads/2014/02/shameless16.jpeg" alt="" />
+                <h2 class="bottom-right">Shameless</h2>
+                <p>Watch the Irish American family the Gallagher's deal with their alcoholic father Frank. Fiona, the eldest daughter, takes the role of the parent to her five brothers and sisters.</p>
+                <NavLink to={`/videos/${9}/details`} className="wfefq" >
+                    <button>Details</button>
+                </NavLink>
+            </div>
+
         <div className="tvshowtitles">
             {/* {tvshows.map(tv => (
                 <AllTVShowsIndex
@@ -139,6 +152,7 @@ const AllTVShows = () => {
                     />
                 ))}
             </div>
+         </div>
         </div>
     )
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import "./SignupForm.css";
 
 function SignupFormPage() {
@@ -17,18 +17,20 @@ function SignupFormPage() {
     const [errors, setErrors] = useState({});
 
 
-    // useEffect(() => {
-    //     const err = {}
+    useEffect(() => {
+        const errors = {}
 
-    //     if (email.length === 0) err.email = ''
-    //     if (username.length === 0) err.email = ''
-    //     if (password.length === 0) err.email = ''
-    //     if (confirmPassword.length === 0) err.email = ''
-    //     if (username.length < 4) err.username = ''
-    //     if (password.length < 6) err.username = ''
+        if (email.length === 0) errors.email = ''
+        if (username.length === 0) errors.email = ''
+        // if (firstName.length === 0) errors.email = ''
+        if (password.length === 0) errors.email = ''
+        if (confirmPassword.length === 0) errors.email = ''
+        // if (lastName.length === 0) errors.email = ''
+        if (username.length < 4) errors.username = ''
+        if (password.length < 6) errors.username = ''
 
-    //     setErrors(errors)
-    // }, [email, username, password, confirmPassword])
+        setErrors(errors)
+    }, [email, username, password, confirmPassword])
 
     if (sessionUser) return <Redirect to="/" />;
     
@@ -57,13 +59,14 @@ function SignupFormPage() {
     
 
     return (
-        <>
+        <div className='alnfhtahcnh'>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Email
+                    {/* Email */}
                     <input
                         type="text"
+                        placeholder='Email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -71,9 +74,10 @@ function SignupFormPage() {
                 </label>
                 {errors.email && <p>{errors.email}</p>}
                 <label>
-                    Username
+                    {/* Username */}
                     <input
                         type="text"
+                        placeholder='Username'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
@@ -81,9 +85,10 @@ function SignupFormPage() {
                 </label>
                 {errors.username && <p>{errors.username}</p>}
                 <label>
-                    Password
+                    {/* Password */}
                     <input
                         type="password"
+                        placeholder='Password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -91,9 +96,10 @@ function SignupFormPage() {
                 </label>
                 {errors.password && <p>{errors.password}</p>}
                 <label>
-                    Confirm Password
+                    {/* Confirm Password */}
                     <input
                         type="password"
+                        placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
@@ -101,10 +107,10 @@ function SignupFormPage() {
                 </label>
                 {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
                 <button type="submit"
-                    // disabled={Boolean(Object.values(errors).length)}
+                    disabled={Boolean(Object.values(errors).length)}
                 >Sign Up</button>
             </form>
-        </>
+        </div>
     );
 }
 

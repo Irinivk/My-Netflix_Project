@@ -4,8 +4,8 @@ import './comedytvshow.css'
 const Comedytvshow = ({ com }) => {
 
     return (
-        <NavLink to={`/video/${com.id}`} className="tv">
-            <img src={com.preview} alt="" className='tvposter' />
+        <NavLink to={`/videos/${com.id}/details`} className="tv">
+            <img src={com.preview} alt="" className='dnmaftvposter' />
         </NavLink>
     )
 
