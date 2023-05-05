@@ -4,8 +4,8 @@ import './AllCom.css'
 const AllComedy = ({ com }) => {
     console.log(com)
     return (
-        <NavLink to={`/video/${com.id}`} className="All">
-            <img src={com.preview} alt="" className='Allposter' />
+        <NavLink to={`/videos/${com.id}/details`} className="All">
+            <img src={com.preview} alt="" className='Alldsfsdposter' />
         </NavLink>
     )
 

@@ -111,6 +111,16 @@ export const deleteVideo = (video) => async (dispatch) => {
 
 }
 
+export const displayEpisode = (episodeId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/videos/episode/details/${episodeId}`)
+
+    console.log(res)
+    if (res.ok) {
+        const episodeDetails = await res.json()
+        dispatch(loadAVideo(episodeDetails))
+    }
+}
+
 const VideoReducer = (state = {}, action) => {
 
     switch(action.type) {

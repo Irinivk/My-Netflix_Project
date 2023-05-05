@@ -10,6 +10,7 @@ import AllCrime from "./AllCrime"
 import AllDrama from "./AllDrama"
 import AllHorror from "./AllHorror"
 import AllMystery from "./AllMystery"
+import { NavLink } from "react-router-dom";
 import './AllindexMov.css'
 
 
@@ -61,12 +62,16 @@ const Allfilms = () => {
         // }
     }
 
-    // console.log(genreArrayComedy)
+    console.log(videos[1])
     return (
         <div className="wrapper" >
             <div className="backgrounddjnjf">
-                <img src="https://media.architecturaldigest.com/photos/6176ccf122e49584c796e2e2/16:9/w_2560%2Cc_limit/rev-1-DU-05633-Edit_rv2_High_Res_JPEG.jpeg    " alt="" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" alt="" />
                 <h2 class="bottom-right">Dune</h2>
+                <p>Elephant Bolbo does not know why he is having the same dream every night. Until he finds something extraordinary!</p>
+                <NavLink to={`/videos/${2}/details`} className="wfefq" >
+                    <button>Details</button>
+                </NavLink>
             </div>
             
         <div className="allfilmstitles">

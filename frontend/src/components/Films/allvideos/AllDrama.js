@@ -4,9 +4,9 @@ import './Alldra.css'
 const AllDrama = ({ dra }) => {
 
     return (
-        <NavLink to={`/video/${dra.id}`} className="All">
+        <NavLink to={`/videos/${dra.id}/details`} className="All">
             <div className="Allfilmimages">
-                <img src={dra.preview} alt="" className='Allposter' />
+                <img src={dra.preview} alt="" className='AlldbhBDposter' />
             </div>
             
         </NavLink>
