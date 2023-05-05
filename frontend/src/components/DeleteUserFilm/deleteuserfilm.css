@@ -1,0 +1,26 @@
+.delete-a-video-form>.delete-no {
+    width: 150px;
+    height: 35px;
+}
+
+form.delete-a-video-form>.delete-yes {
+    background-color: red;
+    width: 150px;
+    height: 35px;
+    color: white;
+    margin-left: 10px;
+}
+
+form.delete-a-video-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kjbcsd > h1 {
+    color: black;
+}
+
+.kjbcsd > h2 {
+    color: black;
+}
