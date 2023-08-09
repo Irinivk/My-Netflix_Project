@@ -13,6 +13,7 @@ import UserFilms from "./components/UserFIlms";
 import CreateNewAcc from "./components/UserAccounts/hdbhd";
 import Thefilmdetails from "./components/OneFilm/detailsoffilm";
 import Episodedetails from "./components/OneFilm/detailsofepisodes";
+import TheNunFilm from "./components/Films/allvideos/TheNunFilm";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -37,7 +38,8 @@ function App() {
         <Route exact path="/video/:videoId" component={LoadOneVideo} />
         <Route path="/videos/new" component={NewGenre} />
         <Route exact path='/create/account' component={CreateNewAcc} /> 
-       <Route exact path='/episodes/:episodeId' component={Episodedetails} />
+        <Route exact path='/episodes/:episodeId' component={Episodedetails} />
+        <Route exact path='/video/nun/details' component={TheNunFilm} />
 
       </Switch>}
 

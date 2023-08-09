@@ -12,7 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    margin-top: 200px;
+    margin-top: 50px;
 }
 
 .allaccbutton {
@@ -34,3 +34,16 @@ img.sjnd {
     margin: 2em 0 1em;
     padding: 0.5em 1.5em;
 }
+
+.ecerty > h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 170px;
+    font-size: 60px;
+    font-weight: normal;
+}
+
+/* .allaccounts > h1 {
+    font-size: 50px;
+} */

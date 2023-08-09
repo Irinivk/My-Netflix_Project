@@ -19,6 +19,7 @@ const AllUsersAcc = () => {
 
     return (
         <div className="ecerty">
+            <h1>Who's watching?</h1>
             <div className="allaccounts"> 
             {/* <div className="accimages"> */}
             {acc.map(accounts => (

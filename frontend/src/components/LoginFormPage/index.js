@@ -38,8 +38,14 @@ function LoginFormPage() {
     };
 
     return (
+        <>
+        <div class="background-image273736644">
+                        <img src='src="https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_small.jpg"'
+                        srcSet='https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w'
+                        />
+                    </div>
         <div className="loginbaldhbd">
-            <h1>Log In</h1>
+            <h1>Sign In</h1>
             <form onSubmit={handleSubmit}>
                 <div className="abbfashfkln">
                     <label>
@@ -65,7 +71,7 @@ function LoginFormPage() {
                 {errors.credential && <p>{errors.credential}</p>}
                 </div>
                 <div className="ajkbdhvfqkjbkhb">
-                    <button type="submit">Log In</button>
+                    <button type="submit">Sign In</button>
                     <button className="demo-user" onClick={(e) => DemoUser(e)}>
                          Demo User
                     </button>
@@ -79,6 +85,7 @@ function LoginFormPage() {
 
             </form>
         </div>
+        </>
     );
 }
 
