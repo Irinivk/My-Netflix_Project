@@ -54,12 +54,19 @@
     font-size: small;
     width: 210px;
     margin-left: 67px;
+    color: white;
+    text-decoration: none;
+}
+
+a.All {
+    text-decoration: none;
 }
 
 .kbebfqjbhkhd > h4 {
     font-size: small;
     width: 210px;
     margin-left: 67px;
+    color: white;
 }
 
 .kfjebhf > a > button{

@@ -1,14 +1,25 @@
 .allaccimages > a > img {
     display: flex;
-    width: 200px;
-    height: 200px;
-    margin-left: 20px;
+    width: 180px;
+    height: 180px;
+    margin-left: 30px;
+    border-radius: 5px;
 }
 
 .allaccimages > a > h1 {
     margin-left: 60px;
     color: azure;
-    
+    font-size: 24px;
+    color: grey;
+}
+
+.allaccimages>a>h1:hover {
+    color: white;
+}
+
+.allaccimages>a>img:hover {
+    border: solid;
+    border-color: white;
 }
 
 .allaccimages>a {

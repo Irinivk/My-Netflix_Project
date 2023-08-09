@@ -34,14 +34,19 @@ function Navigation({ isLoaded }) {
     } else {
         sessionLinks = (
             <div className='hugekbkhba'> 
-                <div className='smandsnad'>
-                    {/* <div class=" default-ltr-cache-1dibr51" data-uia="nmhp-card-hero+gradient"></div> */}
+             <div class="background-image28273">
+                        <img src='src="https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_small.jpg"'
+                        srcSet='https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/6c884f48-f7d8-4a59-9d25-b7c138813aee/c741e848-5f1b-4230-8400-909aa0a4ac80/US-en-20230807-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w'
+                        />
+                    </div>
                 
+                <div className='smandsnad'>
+                   
                         <NavLink exact to="/">Home</NavLink>
                    
                     <div className='ajsndas'>
                         <button>
-                             <NavLink to="/login">Log In</NavLink>
+                             <NavLink to="/login">Sign In</NavLink>
                         </button>
                     </div>
                 </div>

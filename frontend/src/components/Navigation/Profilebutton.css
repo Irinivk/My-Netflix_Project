@@ -31,6 +31,7 @@
     left: -120px;
     margin-right: 500px;
     color:  white;
+    font-weight: normal;
 }
 
 .dropdown-content>.userInfo {
